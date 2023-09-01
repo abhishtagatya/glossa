@@ -1,0 +1,1 @@
+from glossa.preprocess.base import BasePreprocess

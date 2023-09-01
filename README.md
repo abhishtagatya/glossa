@@ -1,2 +1,2 @@
 # glossa
-🈳 A Collection of Language Detection &amp; Translation Methods
+🈳 Collection of Language Classification, Translation, and Expansion Methods
