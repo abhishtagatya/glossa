@@ -9,7 +9,7 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader, Subset
 from sklearn.metrics import mean_squared_error
 
-logging.basicConfig()
+logging.basicConfig(level=logging.INFO)
 
 
 class LSTM_Fixed(nn.Module):
