@@ -2,6 +2,7 @@ import warnings
 from typing import Any, AnyStr
 
 import numpy as np
+import torch
 
 from glossa.exception import GlossaEncoderWarning
 
@@ -30,7 +31,7 @@ class OrdEncoder:
         length = min(self.max_length, len(encoder))
         encoded[:length] = encoder[:length]
 
-        return encoded, length
+        return torch.from_numpy(encoded.astype(np.int32)), length
 
     @property
     def min(self):
