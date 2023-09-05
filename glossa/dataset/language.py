@@ -78,7 +78,9 @@ class LanguageDataset(BaseDataset):  # noqa
         """
         download_kaggle_dataset('basilb2s/language-detection')
 
-        ds_path = os.getenv('GLOSSA_DATA', '.data') + '/Language Detection.csv'
+        sub_folder = '/dataset'
+        ds_path = os.getenv('GLOSSA_DATA', '.data') + sub_folder + '/Language Detection.csv'
+
         if not os.path.isfile(ds_path):
             raise GlossaValueError('MISSING_PATH', path=ds_path)
 
@@ -107,7 +109,7 @@ class OrdLanguageDataset(LanguageDataset):
 
     def __getitem__(self, item):
         return (
-            torch.from_numpy(self.x[item][0].astype(np.int32)),
+            self.x[item][0],
             self.label[self.y[item]],
             self.x[item][1]
         )
