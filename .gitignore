@@ -145,6 +145,7 @@ cython_debug/
 
 # Datasets
 /data
+/.data
 
 # Main Class
 main.py
