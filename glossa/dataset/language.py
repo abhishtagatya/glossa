@@ -29,7 +29,7 @@ class LanguageDataset(BaseDataset):  # noqa
             x = [self.preprocess(data) for data in x]
 
         if self.encoder_func:
-            x = [self.encoder_func.encode(data, suppress=True) for data in x]
+            x = [self.encode(data, suppress=True) for data in x]
 
         self.x = x
         self.y = y
