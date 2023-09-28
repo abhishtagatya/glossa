@@ -28,7 +28,7 @@ class ForeignNameDataset(BaseDataset): # noqa
             x = [self.preprocess(data) for data in x]
 
         if self.encoder_func:
-            x = [self.encoder_func.encode(data, suppress=True) for data in x]
+            x = [self.encode(data, suppress=True) for data in x]
 
         self.x = x
         self.y = y
@@ -63,6 +63,12 @@ class ForeignNameDataset(BaseDataset): # noqa
                        encoder: BaseEncoder | Any = None):
         """
         Automatically downloads the dataset from the PyTorch Repository for Foreign Names.
+        Loading the Dataset class with 20K and 18 classes.
+
+        Class:
+        `Arabic`, `Chinese`, `Czech`, `Dutch`, `English`, `French`, `German`, `Greek`,
+        `Irish`, `Italian`, `Japanese`, `Korean`, `Polish`, `Portuguese`, `Russian`,
+        `Scottish`, `Spanish`, `Vietnamese`
 
         :param preprocess: List of Preprocess Class or Functions (Subclass glossa.preprocess.BasePreprocess)
         :param encoder: An Encoder Class or Function (Subclass glossa.encoder.BaseEncoder)
