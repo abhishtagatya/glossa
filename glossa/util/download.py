@@ -6,7 +6,7 @@ import kaggle
 
 
 def download_kaggle_dataset(dataset: str, data_dir: str = '.data/'):
-    sub_folder = '/dataset'
+    sub_folder = '/dataset/kaggle'
     full_dir = os.getenv('GLOSSA_DATA', data_dir) + sub_folder
 
     if not os.path.exists(full_dir):

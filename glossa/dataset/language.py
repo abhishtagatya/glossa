@@ -78,7 +78,7 @@ class LanguageDataset(BaseDataset):  # noqa
         """
         download_kaggle_dataset('basilb2s/language-detection')
 
-        sub_folder = '/dataset'
+        sub_folder = '/dataset/kaggle'
         ds_path = os.getenv('GLOSSA_DATA', '.data') + sub_folder + '/Language Detection.csv'
 
         if not os.path.isfile(ds_path):
@@ -93,7 +93,7 @@ class LanguageDataset(BaseDataset):  # noqa
         df = pd.read_csv(ds_path)
         df = df[df[y_col].isin(support_lang)]
 
-        return cls.from_df(df=df, x_col='Text', y_col='Language', preprocess=preprocess, encoder=encoder)
+        return cls.from_df(df=df, x_col=x_col, y_col=y_col, preprocess=preprocess, encoder=encoder)
 
 
 class OrdLanguageDataset(LanguageDataset):
